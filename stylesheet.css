@@ -1,0 +1,28 @@
+#canvas {
+    display: flex;
+    width: 40vw;
+    height: 40vw;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.gridBox {
+    display: flex;
+    box-sizing: border-box;
+    width: calc(100% / 16);
+    height: calc(100% / 16);
+    flex-shrink: 0;
+}
+
+body {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 100vh ;
+    background-color: rgb(152, 255, 203);
+}
+
+.gridHover {
+    background-color: black;
+}
