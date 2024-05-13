@@ -1,11 +1,18 @@
 let can = document.querySelector("#canvas");
 let gridBox;
-let boxes = 16;
+let boxes = 20;
 
 let button = document.getElementById("btn");
 function promptFunction() {
   boxes = Number(prompt("Enter square size", "16"));
+  if (boxes === 0 || boxes > 100)
+  {
+    alert("Enter values from 1 to 100")
+  }
+  else
+  {
   createGrid();
+  }
 }
 
 button.onclick = promptFunction;
@@ -19,6 +26,8 @@ function createGrid() {
     gridBox.classList.add("gridBox");
     gridBox.style.width = `calc(100%/${boxes})`;
     gridBox.style.height = `calc(100%/${boxes})`;
+    const randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
+    gridBox.style.setProperty('--main-bg-color', randomColor);
   }
 
   let gridBoxHover = document.querySelectorAll(".gridBox");
